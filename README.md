@@ -25,7 +25,7 @@ Install FluxCD CLI
 
 Create a token [here](https://github.com/settings/tokens).
 
-Bootstrap repo
+Bootstrap the repo.
 
     flux bootstrap github \
       --components-extra=image-reflector-controller,image-automation-controller \
@@ -35,6 +35,12 @@ Bootstrap repo
       --path=bootstrap \
       --personal \
       --token-auth
+
+Force repo reconciliation (skip 10min).
+
+   work !
+
+Force repo reconciliation (skip 10min).
 
     flux reconcile kustomization flux-system --with-source
 
