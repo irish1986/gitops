@@ -36,7 +36,7 @@ Let's use [K3D](https://k3d.io/v5.4.6/) because it [K3S](https://k3s.io/) in doc
 
         export GITHUB_TOKEN=<your-token>
         export GITHUB_USER=irish1986
-        export GITHUB_REPO=gitops-demo
+        export GITHUB_REPO=gitops
 
 1. Create a repo 
         
