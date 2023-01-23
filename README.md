@@ -25,14 +25,19 @@ Install FluxCD CLI
 
 Create a token [here](https://github.com/settings/tokens).
 
-    export TOKEN=your-token
+    export GITHUB_TOKEN=<your-token>
+    export GITHUB_USER=irish1986
+    export GITHUB_REPO=gitops
+Verify that your staging cluster satisfies the prerequisites with:
+
+    flux check --pre
 
 Bootstrap the repo.
 
     flux bootstrap github \
       --components-extra=image-reflector-controller,image-automation-controller \
-      --owner=irish1986 \
-      --repository=gitops \
+      --owner=${GITHUB_USER} \
+      --repository=${GITHUB_REPO} \
       --branch=main \
       --path=bootstrap \
       --personal \
@@ -41,12 +46,18 @@ Bootstrap the repo.
 Check what is deployed
 
    kubectl describe pod nginx
+   kubectl port-forward service/nginx 8080:80
 
 Do some work and commit.
 
    git add .
    git commit -m "something something"
    git push origin main
+
+Let's deploy podinfo
+
+   kubectl describe pod podinfo
+   kubectl port-forward service/podinfo 8080:9898
 
 Force repo reconciliation (skip 10min).
 
