@@ -25,6 +25,8 @@ Install FluxCD CLI
 
 Create a token [here](https://github.com/settings/tokens).
 
+    export TOKEN=your-token
+
 Bootstrap the repo.
 
     flux bootstrap github \
@@ -36,9 +38,15 @@ Bootstrap the repo.
       --personal \
       --token-auth
 
-Force repo reconciliation (skip 10min).
+Check what is deployed
 
-   work !
+   kubectl describe pod nginx
+
+Do some work and commit.
+
+   git add .
+   git commit -m "something something"
+   git push origin main
 
 Force repo reconciliation (skip 10min).
 
