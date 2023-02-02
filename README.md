@@ -14,6 +14,7 @@ Let's use [K3D](https://k3d.io/v5.4.6/) because it [K3S](https://k3s.io/) in doc
 
 1. Check if everything is OK.
 
+        alias k="kubectl"
         kubectl get nodes
 
 1. Deploy nginx manifest
@@ -23,8 +24,7 @@ Let's use [K3D](https://k3d.io/v5.4.6/) because it [K3S](https://k3s.io/) in doc
 
 1. Check what is deployed
 
-        kubectl describe pod nginx
-        kubectl port-forward service/nginx 8080:80
+        kubectl get deployment -o wide
 
 ## FluxCD
 
@@ -84,14 +84,14 @@ Let's use [K3D](https://k3d.io/v5.4.6/) because it [K3S](https://k3s.io/) in doc
         flux create image repository nginx \
         --image=nginx \
         --interval=1m \
-        --export > ./bootstrap/default/manifest/repo.yaml
+        --export > ./bootstrap/app/repo.yaml
 
 1. Create ImagePolicy 
 
         flux create image policy nginx \
         --image-ref=nginx \
         --select-semver=1.23.x \
-        --export > ./bootstrap/default/manifest/policy.yaml
+        --export > ./bootstrap/app/policy.yaml
 
 1. Deploy repo and policy
 
