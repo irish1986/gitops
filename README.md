@@ -69,15 +69,12 @@ Let's use [K3D](https://k3d.io/v5.4.6/) because it [K3S](https://k3s.io/) in doc
 1. Deploy nginx manifest via FluxCD
 
         git add .
-        git commit -m "something something"
-        git push origin main
         flux get kustomizations --watch
         flux reconcile kustomization flux-system --with-source
 
 1. Check status
 
-        kubectl describe pod nginx
-        kubectl port-forward service/nginx 8080:80
+        kubectl get deployment -o wide -w
 
 1. Create ImageRepository 
 
@@ -93,14 +90,6 @@ Let's use [K3D](https://k3d.io/v5.4.6/) because it [K3S](https://k3s.io/) in doc
         --select-semver=1.23.x \
         --export > ./bootstrap/app/policy.yaml
 
-1. Deploy repo and policy
-
-        git add .
-        git commit -m "something something"
-        git push origin main
-        flux get kustomizations --watch
-        flux reconcile kustomization flux-system --with-source
-
 1. Enable policy on deployment.yaml manifest
 
         spec:
@@ -112,9 +101,9 @@ Let's use [K3D](https://k3d.io/v5.4.6/) because it [K3S](https://k3s.io/) in doc
 
         flux create image update flux-system \
         --git-repo-ref=flux-system \
-        --git-repo-path="./bootstrap/default" \
-        --checkout-branch=main \
-        --push-branch=main \
+        --git-repo-path="./bootstrap/app" \
+        --checkout-branch=${GITHUB_REPO} \
+        --push-branch=${GITHUB_REPO} \
         --author-name=fluxcdbot \
         --author-email=fluxcdbot@users.noreply.github.com \
         --commit-template="" \
@@ -123,17 +112,10 @@ Let's use [K3D](https://k3d.io/v5.4.6/) because it [K3S](https://k3s.io/) in doc
 1. Deploy automation
 
         git add .
-        git commit -m "something something"
-        git push origin main
         flux get kustomizations --watch
         flux reconcile kustomization flux-system --with-source
 
         GO TO GITHUB, WAIT FOR A MINUTE.
-
-1. Check status
-
-        git pull
-        kubectl describe pod nginx
 
 1. Break stuff !
 
