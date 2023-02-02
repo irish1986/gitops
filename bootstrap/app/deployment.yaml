@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.22.0
+        image: nginx:1.22.0 # {"$imagepolicy": "flux-system:nginx"}
         resources:
           limits:
             memory: "64Mi"
