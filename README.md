@@ -1,5 +1,11 @@
 # gitops
 
+## Install k3s
+
+```bash
+curl -sfL https://get.k3s.io  | INSTALL_K3S_EXEC="--disable local-storage --disable servicelb --disable=traefik --disable-cloud-controller" sh -
+```
+
 ## Kubernetes Cluster
 
 Let's use [K3D](https://k3d.io/v5.4.6/) because it [K3S](https://k3s.io/) in docker so everything is easy.
