@@ -34,7 +34,6 @@ repos:
         stages: [pre-commit]
       - id: check-yaml
         files: /.(yaml|yml)$
-        exclude: ^k8s/cluster/homelab/base/flux-system
         stages: [pre-commit]
       - id: end-of-file-fixer
         stages: [pre-commit]

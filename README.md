@@ -71,11 +71,10 @@ kubectl port-forward service/nginx 8080:80
 
 ```bash
         flux bootstrap github \
-            --components-extra=image-reflector-controller,image-automation-controller \
-            --owner=${GITHUB_USER} \
-            --repository=${GITHUB_REPO} \
+            --owner=irish1986 \
+            --repository=gitops \
             --branch=main \
-            --path=bootstrap \
+            --path=cluster/demo \
             --personal \
             --token-auth
 ```
