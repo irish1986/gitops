@@ -15,11 +15,11 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.20.0
-        resources:
-          limits:
-            memory: "64Mi"
-            cpu: "500m"
-        ports:
+        - name: nginx
+          image: nginx:1.20.0
+          resources:
+            limits:
+              memory: "64Mi"
+              cpu: "500m"
+      ports:
         - containerPort: 80
