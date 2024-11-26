@@ -35,6 +35,7 @@ repos:
       - id: check-yaml
         files: /.(yaml|yml)$
         stages: [pre-commit]
+        exclude: ^cluster/demo/flux-system
       - id: end-of-file-fixer
         stages: [pre-commit]
       - id: forbid-new-submodules
@@ -65,7 +66,7 @@ repos:
       - id: fix-smartquotes
         stages: [pre-commit]
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.43.0
+    rev: v0.42.0
     hooks:
       - id: markdownlint
         args:
