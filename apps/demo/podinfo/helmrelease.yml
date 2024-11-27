@@ -23,6 +23,6 @@ spec:
     crds: CreateReplace
   values:
     service:
-      type: LoadBalancer
+      type: ClusterIP
     ui:
       color: "#4f00a3"
