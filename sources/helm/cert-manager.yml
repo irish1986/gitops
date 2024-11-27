@@ -1,0 +1,10 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: jetstack
+  namespace: flux-system
+spec:
+  interval: 60m
+  url: https://charts.jetstack.io
+  timeout: 3m

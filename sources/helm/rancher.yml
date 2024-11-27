@@ -2,8 +2,9 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
-  name: podinfo
+  name: rancher
   namespace: flux-system
 spec:
-  image: ghcr.io/stefanprodan/podinfo
-  interval: 1m
+  interval: 60m
+  url: https://releases.rancher.com/server-charts/stable
+  timeout: 3m

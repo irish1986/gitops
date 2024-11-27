@@ -1,0 +1,10 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: traefik
+  namespace: flux-system
+spec:
+  interval: 60m
+  url: https://helm.traefik.io/traefik
+  timeout: 3m
