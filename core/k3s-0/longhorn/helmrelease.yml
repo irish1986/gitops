@@ -16,3 +16,8 @@ spec:
         namespace: longhorn-system
   interval: 10m
   values:
+    defaultSettings:
+      backupTarget: nfs://192.168.30.11/backup
+      createDefaultDiskLabeledNodes: true
+      defaultDataLocality: disabled
+      defaultDataPath: /var/lib/longhorn-example/
