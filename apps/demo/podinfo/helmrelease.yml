@@ -14,6 +14,12 @@ spec:
         name: podinfo
         namespace: demo
   interval: 10m
+  install:
+    remediation:
+      retries: 3
+    crds: CreateReplace
+  upgrade:
+    crds: CreateReplace
   values:
     ui:
       color: "#4f00a3"

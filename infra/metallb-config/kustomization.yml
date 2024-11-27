@@ -1,7 +1,7 @@
 ---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: httpbin
+namespace: metallb-system
 resources:
-  - issuer.yml
-  - ca-cert-secret-enc.yml
+  - pool.yml
+  - range.yml

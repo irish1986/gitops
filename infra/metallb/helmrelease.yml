@@ -15,4 +15,12 @@ spec:
         name: metallb
         namespace: metallb-system
   interval: 10m
-  values:
+  install:
+    remediation:
+      retries: 3
+    crds: CreateReplace
+  upgrade:
+    crds: CreateReplace
+  valuesFrom:
+    - kind: ConfigMap.  # 5
+      name: metallb-values  # 5
