@@ -2,7 +2,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
 metadata:
-  name: jetstack
+  name: cert-manager
   namespace: flux-system
 spec:
   interval: 60m
