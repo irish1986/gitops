@@ -9,6 +9,7 @@ spec:
   chart:
     spec:
       chart: podinfo
+      version: 5.0.0
       sourceRef:
         kind: HelmRepository
         name: podinfo
@@ -21,5 +22,7 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
+    service:
+      type: LoadBalancer
     ui:
       color: "#4f00a3"
