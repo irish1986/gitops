@@ -2,13 +2,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
-  namespace: default
+  name: nginx
+  namespace: nginx
+  labels:
+    app: nginx
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
-  replicas: 3
   template:
     metadata:
       labels:
@@ -22,4 +24,5 @@ spec:
               memory: "64Mi"
               cpu: "500m"
       ports:
-        - containerPort: 80
+        - name: nginx
+          containerPort: 80
