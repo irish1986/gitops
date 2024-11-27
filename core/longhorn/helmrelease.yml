@@ -18,6 +18,5 @@ spec:
   values:
     defaultSettings:
       backupTarget: nfs://192.168.30.11/backup
-      createDefaultDiskLabeledNodes: true
-      defaultDataLocality: disabled
-      defaultDataPath: /var/lib/longhorn-example/
+    longhornUI:
+      replicas: 1

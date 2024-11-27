@@ -9,6 +9,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./core/k3s-0
+  path: ./core
   prune: true
   wait: true
