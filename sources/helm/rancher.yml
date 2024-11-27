@@ -7,4 +7,3 @@ metadata:
 spec:
   interval: 60m
   url: https://releases.rancher.com/server-charts/stable
-  timeout: 3m
