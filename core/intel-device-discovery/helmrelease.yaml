@@ -1,0 +1,25 @@
+---
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: intel-device-plugins
+  namespace: kube-system
+spec:
+  releaseName: kubereboot
+  chart:
+    spec:
+      chart: intel-device-discovery
+      version: 0.29.0
+      sourceRef:
+        kind: HelmRepository
+        name: intel-device-discovery
+        namespace: flux-system
+  interval: 10m
+  install:
+    remediation:
+      retries: 3
+    crds: CreateReplace
+  upgrade:
+    crds: CreateReplace
+  values:

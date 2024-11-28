@@ -4,11 +4,14 @@ kind: Kustomization
 resources:
   - cert-manager.yml
   - descheduler.yml
+  - eraser.yml
   - longhorn.yml
+  - intel-device-discovery.yml
   - kured.yml
   - metallb.yml
   - node-feature-discovery.yml
-  - nvidia-device-plugin
+  - node-problem-detector.yml
+  - nvidia-device-plugin.yml
   - pihole.yml
   - podinfo.yml
   - rancher.yml
