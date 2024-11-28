@@ -6,8 +6,6 @@ resources:
   - descheduler.yml
   - eraser.yml
   - longhorn.yml
-  - intel-device-discovery.yml
-  - kured.yml
   - metallb.yml
   - node-feature-discovery.yml
   - nvidia-device-plugin.yml
