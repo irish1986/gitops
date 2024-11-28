@@ -2,8 +2,8 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: nginx
-  namespace: default
+  name: nginx-svc
+  namespace: apps
 spec:
   selector:
     app: nginx
