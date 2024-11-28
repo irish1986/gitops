@@ -4,7 +4,6 @@ kind: Kustomization
 resources:
   - descheduler
   - eraser
-  - kube-vip
+  - kubereboot
   - node-feature-discovery
-  - nvidia-device-plugin
   - reloader

@@ -5,6 +5,7 @@ resources:
   - cert-manager.yml
   - descheduler.yml
   - eraser.yml
+  - kureboot.yml
   - longhorn.yml
   - metallb.yml
   - node-feature-discovery.yml
