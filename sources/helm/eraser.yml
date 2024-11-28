@@ -7,4 +7,3 @@ metadata:
 spec:
   interval: 60m
   url: https://eraser-dev.github.io/eraser/charts
-  timeout: 3m

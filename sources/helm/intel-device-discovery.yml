@@ -7,4 +7,3 @@ metadata:
 spec:
   interval: 60m
   url: https://intel.github.io/helm-charts
-  timeout: 3m

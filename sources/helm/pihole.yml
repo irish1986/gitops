@@ -7,4 +7,3 @@ metadata:
 spec:
   interval: 60m
   url: https://mojo2600.github.io/pihole-kubernetes/
-  timeout: 3m

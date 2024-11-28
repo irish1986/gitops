@@ -4,8 +4,10 @@ kind: Kustomization
 namespace: kubevip-system
 resources:
   - descheduler
+  - eraser
+  - intel-device-discovery
+  - kube-vip
   - kubereboot
   - node-feature-discovery
   - nvidia-device-plugin
-  - kube-vip
   - reloader

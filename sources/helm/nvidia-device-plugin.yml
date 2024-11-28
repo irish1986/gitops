@@ -7,4 +7,3 @@ metadata:
 spec:
   interval: 60m
   url: https://nvidia.github.io/k8s-device-plugin
-  timeout: 3m
