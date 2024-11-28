@@ -18,11 +18,6 @@ spec:
   install:
     remediation:
       retries: 3
-    crds: CreateReplace
-  upgrade:
-    crds: CreateReplace
   values:
-    service:
-      type: ClusterIP
     ui:
       color: "#4f00a3"
