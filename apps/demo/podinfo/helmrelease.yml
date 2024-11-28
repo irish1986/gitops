@@ -19,7 +19,7 @@ spec:
     remediation:
       retries: 3
   values:
-    services:
+    service:
       type: LoadBalancer
     ui:
       color: "#4f00a3"
