@@ -5,8 +5,10 @@ resources:
   - cert-manager.yml
   - descheduler.yml
   - longhorn.yml
+  - kured.yml
   - metallb.yml
   - node-feature-discovery.yml
+  - nvidia-device-plugin
   - pihole.yml
   - podinfo.yml
   - rancher.yml

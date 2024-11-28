@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: kubevip-system
 resources:
   - descheduler
+  - kubereboot
   - node-feature-discovery
   - nvidia-device-plugin
   - kube-vip
