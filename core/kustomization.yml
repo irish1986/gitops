@@ -3,5 +3,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: kubevip-system
 resources:
+  - descheduler
+  - node-feature-discovery
   - kube-vip
   - reloader
