@@ -5,5 +5,3 @@ namespace: metallb-system
 resources:
   - namespace.yml
   - helmrelease.yml
-  - range.yml
-  - pool.yml

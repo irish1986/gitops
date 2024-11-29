@@ -15,10 +15,3 @@ spec:
         name: metallb
         namespace: kube-system
   interval: 10m
-  timeout: 5m
-  install:
-    remediation:
-      retries: 3
-    crds: CreateReplace
-  upgrade:
-    crds: CreateReplace
