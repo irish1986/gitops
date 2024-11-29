@@ -1,5 +1,23 @@
 # gitops
 
+## setup host
+
+```bash
+sudo apt update && sudo apt upgrade
+sudo apt install qemu-guest-agent -y
+sudo apt install nfs-common open-iscsi -y
+sudo reboot now
+sudo modprobe iscsi_tcp
+```
+
+## Setup longhorn
+
+1. Check node are ready
+
+```bash
+curl -sSfL https://raw.githubusercontent.com/longhorn/longhorn/v1.7.2/scripts/environment_check.sh | bash
+```
+
 ## Install k3s
 
 ```bash
