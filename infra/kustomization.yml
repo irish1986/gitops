@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - longhorn
   - metallb
-  - nfs-subdir-external-provisioner
+  - nfs-subdir
