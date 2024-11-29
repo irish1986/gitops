@@ -8,6 +8,7 @@ resources:
   - kureboot.yml
   - longhorn.yml
   - metallb.yml
+  - nfs-subdir-external-provisioner.yml
   - node-feature-discovery.yml
   - nvidia-device-plugin.yml
   - pihole.yml
