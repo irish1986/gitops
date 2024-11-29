@@ -15,6 +15,7 @@ spec:
         name: metallb
         namespace: metallb-system
   interval: 10m
+  timeout: 5m
   install:
     remediation:
       retries: 3
