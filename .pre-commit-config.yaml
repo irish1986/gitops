@@ -8,12 +8,12 @@ ci:
     - ggshield
 repos:
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.31.0
+    rev: v4.1.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
   - repo: https://github.com/gitguardian/ggshield
-    rev: v1.33.0
+    rev: v1.34.0
     hooks:
       - id: ggshield
         language_version: python3
@@ -58,7 +58,7 @@ repos:
       - id: remove-tabs
         stages: [pre-commit]
   - repo: https://github.com/sirosen/texthooks
-    rev: 0.6.7
+    rev: 0.6.8
     hooks:
       - id: alphabetize-codeowners
       - id: fix-ligatures
@@ -66,7 +66,7 @@ repos:
       - id: fix-smartquotes
         stages: [pre-commit]
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.42.0
+    rev: v0.43.0
     hooks:
       - id: markdownlint
         args:
