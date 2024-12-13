@@ -1,4 +1,6 @@
 ---
+exclude: |
+  ^cluster/demo/flux-system/
 fail_fast: false
 ci:
   autoupdate_schedule: monthly
@@ -7,12 +9,12 @@ ci:
     - ggshield
 repos:
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.31.0
+    rev: v4.1.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
   - repo: https://github.com/gitguardian/ggshield
-    rev: v1.33.0
+    rev: v1.34.0
     hooks:
       - id: ggshield
         language_version: python3
@@ -33,7 +35,6 @@ repos:
         stages: [pre-commit]
       - id: check-yaml
         files: /.(yaml|yml)$
-        exclude: ^cluster/demo/flux-system/
         stages: [pre-commit]
       - id: end-of-file-fixer
         stages: [pre-commit]
@@ -57,7 +58,7 @@ repos:
       - id: remove-tabs
         stages: [pre-commit]
   - repo: https://github.com/sirosen/texthooks
-    rev: 0.6.7
+    rev: 0.6.8
     hooks:
       - id: alphabetize-codeowners
       - id: fix-ligatures

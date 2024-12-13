@@ -22,7 +22,7 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
-    # config:
-    #   address: ""
-    # env:
-    #   vip_interface: ""
+  # config:
+  #   address: ""
+  # env:
+  #   vip_interface: ""
