@@ -4,7 +4,6 @@ ci:
   autoupdate_schedule: monthly
   skip:
     - actionlint
-    - ansible-lint
     - ggshield
 repos:
   - repo: https://github.com/commitizen-tools/commitizen
