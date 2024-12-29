@@ -99,8 +99,9 @@ kubectl port-forward service/nginx 8080:80
             --owner=irish1986 \
             --repository=gitops \
             --branch=main \
-            --path=cluster/demo \
+            --path=clusters/dev \
             --personal \
+            --private=false \
             --token-auth
 ```
 
