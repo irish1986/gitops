@@ -1,0 +1,42 @@
+---
+version: '3'
+
+vars:
+  K8S_VERSION: rancher/k3s:v1.31.4-k3s1
+
+tasks:
+  k3d:delete-local-cluster:
+    desc: Delete local k3s cluster
+    cmds:
+      - >-
+        k3d cluster delete local-cluster
+    silent: true
+  k3d:create-local-cluster:
+    desc: Create a local k3s cluster
+    cmds:
+      - >-
+        k3d cluster create local-cluster
+        --image "{{.K8S_VERSION}}"
+        --servers 1
+        --agents 2
+        --api-port 6550
+        --port "8080:80@loadbalancer"
+        --k3s-arg '--disable=traefik@server:0'
+        --k3s-arg '--flannel-backend=none@server:0'
+        --k3s-node-label "agent=true@agent:0,1"
+        --volume "$(pwd)/infrastructure/calico/calico.yaml:/var/lib/rancher/k3s/server/manifests/calico.yaml"
+        --wait
+    silent: true
+  k3d:use-local-k3s-context:
+    desc: Use the local k3s cluster context
+    cmds:
+      - >-
+        kubectl config use-context local-cluster
+    silent: true
+  k3d:verify-calico:
+    deps: [k8s:use-local-k3s-context]
+    desc: Verify that calico controller is deployed to local k3s cluster
+    cmds:
+      - >-
+        watch kubectl -n kube-system get deployments/calico-kube-controllers
+    silent: true

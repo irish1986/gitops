@@ -1,0 +1,12 @@
+---
+version: '3'
+
+tasks:
+  setup:install-prerequisites:
+    desc: Install prerequisites (docker, kubectl, flux, k3d)
+    preconditions:
+      - sh: command -v brew
+        msg: Homebrew is required but it's not installed. Aborting.
+    cmds:
+      - brew install docker kubernetes-cli fluxcd/tap/flux k3d
+    silent: true

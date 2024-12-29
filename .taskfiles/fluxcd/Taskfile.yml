@@ -1,0 +1,60 @@
+---
+version: '3'
+
+vars:
+  FLUX_CONTEXT: local-cluster
+  FLUX_CLUSTER: dev
+
+tasks:
+  flux:check-prerequisites:
+    deps: [k8s:use-local-k3s-context]
+    desc: Run flux pre check against the local k3s cluster
+    cmds:
+      - >-
+        flux check --pre
+    silent: true
+  flux:bootstrap-dev1-cluster:
+    deps: [k8s:use-local-k3s-context]
+    desc: Bootstrap flux to local k3s cluster
+    cmds:
+      - >-
+        flux bootstrap github
+        --context="{{.FLUX_CONTEXT}}"
+        --owner=${GITHUB_USER}
+        --repository=${GITHUB_REPO}
+        --branch=main
+        --personal=true
+        --private=false
+        --network-policy=false
+        --path=clusters/"{{.FLUX_CONTEXT}}"
+    silent: true
+  flux:reconcile:
+    deps: [k8s:use-local-k3s-context]
+    desc: Trigger a sync of the flux-system and apply changes to local k3s cluster
+    cmds:
+      - >-
+        flux reconcile kustomization flux-system --with-source
+  flux:get-helmreleases:
+    deps: [k8s:use-local-k3s-context]
+    desc: List all Helm releases and their status in local k3s cluster
+    cmds:
+      - >-
+        flux get helmreleases -A
+  flux:get-kustomizations:
+    deps: [k8s:use-local-k3s-context]
+    desc: List all kustomizations and their status in local k3s cluster
+    cmds:
+      - >-
+        flux get kustomization -A
+  flux:get-helmrepositories:
+    deps: [k8s:use-local-k3s-context]
+    desc: List all Helm repositories and their status in local k3s cluster
+    cmds:
+      - >-
+        flux get sources helm -A
+  flux:get-gitrepositories:
+    deps: [k8s:use-local-k3s-context]
+    desc: List all Git repositories and their status in local k3s cluster
+    cmds:
+      - >-
+        flux get sources git -A
