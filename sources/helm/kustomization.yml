@@ -10,3 +10,4 @@ resources:
   - metallb.yml
   - podinfo.yml
   - reloader.yml
+  - traefik.yml

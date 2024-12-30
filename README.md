@@ -95,14 +95,15 @@ kubectl port-forward service/nginx 8080:80
 1. Bootstrap the repo.
 
 ```bash
-        flux bootstrap github \
-            --owner=irish1986 \
-            --repository=gitops \
-            --branch=main \
-            --path=clusters/dev \
-            --personal \
-            --private=false \
-            --token-auth
+flux bootstrap github \
+--owner=${GITHUB_USER} \
+--repository=${GITHUB_REPO} \
+--branch=${CLUSTER_BRANCH} \
+--path=clusters/${CLUSTER_ENV} \
+--personal \
+--private=false \
+--tls-san=${KUBE_VIP} \
+--token-auth
 ```
 
 1. Deploy nginx manifest via FluxCD.  Move manifest under FluxCD directory.
