@@ -7,10 +7,8 @@ metadata:
 spec:
   chart:
     spec:
-      version: 6.7.1
+      version: 6.5.1
   values:
     replicaCount: 3
     service:
       type: LoadBalancer
-    ui:
-      color: "#4f00a3"
