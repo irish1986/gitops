@@ -21,7 +21,8 @@ curl -sSfL https://raw.githubusercontent.com/longhorn/longhorn/v1.7.2/scripts/en
 ## Install k3s
 
 ```bash
-curl -sfL https://get.k3s.io  | INSTALL_K3S_EXEC="--disable local-storage --disable servicelb --disable=traefik --disable-cloud-controller" sh -
+curl -sfL https://get.k3s.io  | INSTALL_K3S_EXEC="--disable local-storage --disable servicelb --disable=traefik --disable-cloud-controller
+--tls-san=${CLUSTER_VIP} " sh -
 sudo cat /etc/rancher/k3s/k3s.yaml
 ```
 
@@ -102,7 +103,6 @@ flux bootstrap github \
 --path=clusters/${CLUSTER_ENV} \
 --personal \
 --private=false \
---tls-san=${KUBE_VIP} \
 --token-auth
 ```
 
