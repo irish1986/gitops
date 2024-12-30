@@ -6,17 +6,7 @@ metadata:
   namespace: kube-system
 spec:
   values:
-    image:
-      repository: ghcr.io/kube-vip/kube-vip
-      tag: "v0.6.4"
     config:
       address: "192.168.10.99"
     env:
       vip_interface: "enp6s18"
-      vip_arp: "true"
-      lb_enable: "true"
-      lb_port: "6443"
-      vip_cidr: "32"
-      cp_enable: "true"
-      svc_enable: "true"
-      vip_leaderelection: "false"
