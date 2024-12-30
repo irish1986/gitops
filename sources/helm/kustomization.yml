@@ -8,6 +8,8 @@ resources:
   - kureboot.yml
   - longhorn.yml
   - metallb.yml
+  - nfs-subdir.yml
+  - pihole.yml
   - podinfo.yml
   - reloader.yml
   - traefik.yml
