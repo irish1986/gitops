@@ -4,5 +4,4 @@ kind: Kustomization
 namespace: kube-system
 resources:
   - ../../base/metallb
-patches:
-  - path: pool.yml
+  - pool.yml
