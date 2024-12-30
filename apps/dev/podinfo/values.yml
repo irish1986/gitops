@@ -9,9 +9,5 @@ spec:
     spec:
       version: 5.0.0
   values:
-    ingress:
-      hosts:
-        - host: podinfo.production
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
+    ui:
+      color: "#4f00a3"
