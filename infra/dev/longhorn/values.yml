@@ -6,10 +6,5 @@ metadata:
   namespace: kube-system
 spec:
   values:
-    defaultSettings:
-      backupTarget: nfs://192.168.30.11/backup
     longhornUI:
       replicas: 1
-    # service:
-    #   ui:
-    #     type: LoadBalancer
