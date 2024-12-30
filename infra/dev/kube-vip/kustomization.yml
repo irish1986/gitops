@@ -1,6 +1,8 @@
 ---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: apps
 resources:
-  - kube-vip.yml
-  - podinfo.yml
+  - ../../base/kube-vip
+patches:
+  - path: values.yml
