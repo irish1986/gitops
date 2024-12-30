@@ -4,8 +4,9 @@ kind: Kustomization
 resources:
   - descheduler.yml
   - eraser.yml
-  - kureboot.yml
   - kube-vip.yml
+  - kureboot.yml
   - longhorn.yml
+  - metallb.yml
   - podinfo.yml
   - reloader.yml
