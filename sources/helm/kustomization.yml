@@ -8,7 +8,7 @@ resources:
   - kureboot.yml
   - longhorn.yml
   - metallb.yml
-  - nfs-subdir.yml
+  - nfs-subdir-external-provisioner.yml
   - pihole.yml
   - podinfo.yml
   - reloader.yml
