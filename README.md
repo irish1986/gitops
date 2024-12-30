@@ -96,6 +96,13 @@ kubectl port-forward service/nginx 8080:80
 1. Bootstrap the repo.
 
 ```bash
+echo $GITHUB_REPO
+echo $GITHUB_USER
+echo $CLUSTER_ENV
+echo $CLUSTER_BRANCH
+```
+
+```bash
 flux bootstrap github \
 --owner=${GITHUB_USER} \
 --repository=${GITHUB_REPO} \
